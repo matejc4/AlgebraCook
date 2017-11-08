@@ -4,8 +4,8 @@
 
 @section('content')
 <div class="container">
-	<div class="col-md col-md-offset-1">
-		<div class="panel pnale-default">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="panel panel-default">
 			<div class="panel-heading">Recepti<br>
 				<a href="{{ url('/recipes/add') }}">
 					<i class="fa fa-btn fa-plus"></i>
@@ -17,7 +17,7 @@
 					@foreach ($recipes as $recipe)
 					<li class="list-group-item">
 						<a href="recipes/view/{{ $recipe->id }}">{{ $recipe->name }}</a>
-					<li>
+					</li>
 					@endforeach
 				</ul>
 			</div>
