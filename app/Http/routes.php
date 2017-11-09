@@ -24,6 +24,10 @@ Route::get('/', function () {
     return redirect('/recipes');
 });
 
+Route::get('/home', function () {
+    return redirect('/recipes');
+});
+
 Route::get ('/recipes', 'RecipesController@index'); //prikaz svih recepata
 
 Route::get ('/recipes/add', 'RecipesController@add'); //prikaz view-a sa web obrascem za unos
