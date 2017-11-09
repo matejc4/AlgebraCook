@@ -8,8 +8,13 @@
 		<div class="col-md-10 col-md-offset">
 			<div class="panel panel-default">
 				<div class="panel-heading">Detalji za recept {{ $recipe->name }}
-					<br><a href="/recipes/edit/{{ $recipe->id }}">
+					<br>
+					@if (auth()->user()->id ==$recipe->creator_id)
+					<a href="/recipes/edit/{{ $recipe->id }}">
 						<i class="fa fa-btn fa-pencil"></i>Uredi recept</a>
+						<a href="/recipes/del/{{ $recipe->id }}">
+						<i class="fa fa-btn fa-window-close"></i>Izbriši recept</a>
+						@endif
 				</div>
 				<div class="panel-body">
 					<article>
