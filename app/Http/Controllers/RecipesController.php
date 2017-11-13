@@ -9,6 +9,8 @@ use App\Ingredient;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
+
 class RecipesController extends Controller
 {
 	public function __construct(){
@@ -60,6 +62,12 @@ class RecipesController extends Controller
         return view('view')->with('recipe', Recipe::find($id));
     }
 
+	public function viewSastojci(){
+		return view("sastojci", array("ingredients" => Ingredient::get(),
+								"recipes"=> Recipe::get()
+		));
+	}
+	
     /**
      * Show the form for editing the specified resource.
      *

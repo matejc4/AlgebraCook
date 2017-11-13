@@ -17,7 +17,8 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 Route::get('/auth/register', 'Auth\AuthController@getRegister');
 Route::post('/auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('hello', 'TestController@hello');
+Route::get('/profile', 'UsersController@profile');
+Route::post('/profile', 'UsersController@profile');
 
 Route::get('/', function () {
     return redirect('/recipes');
@@ -25,6 +26,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return redirect('/recipes');
 });
+Route::get('sastojci', 'RecipesController@viewSastojci');
 Route::get('/recipes', 'RecipesController@index'); // prilaz svih recepata (popis)
 Route::get('/recipes/add', 'RecipesController@add'); // prikaz view-a sa web obrascem za unos
 Route::post('/recipes/add', 'RecipesController@save'); // spremanje podataka u bazu
@@ -32,3 +34,13 @@ Route::get('/recipes/view/{id}', 'RecipesController@view'); // detaljan prikaz o
 Route::get('/recipes/edit/{id}', 'RecipesController@edit'); // prikaz webobrasca za uređivanje
 Route::post('/recipes/edit', 'RecipesController@update'); // ažuriranje podataka u bazi
 Route::get('recipes/del/{id}', 'RecipesController@delete'); // brisanje recepta
+
+
+
+
+
+
+
+
+
+
